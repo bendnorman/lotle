@@ -1,20 +1,22 @@
-import { DateTime } from "luxon";
+import * as geolib from "geolib";
+
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { toast } from "react-toastify";
 import {
   countries,
   getCountryName,
   sanitizeCountryName,
 } from "../domain/countries";
-import { useGuesses } from "../hooks/useGuesses";
+
 import { CountryInput } from "./CountryInput";
-import * as geolib from "geolib";
-import { Share } from "./Share";
+import { DateTime } from "luxon";
 import { Guesses } from "./Guesses";
-import { useTranslation } from "react-i18next";
 import { SettingsData } from "../hooks/useSettings";
-import { useMode } from "../hooks/useMode";
+import { Share } from "./Share";
+import { toast } from "react-toastify";
 import { useCountry } from "../hooks/useCountry";
+import { useGuesses } from "../hooks/useGuesses";
+import { useMode } from "../hooks/useMode";
+import { useTranslation } from "react-i18next";
 
 function getDayString() {
   return DateTime.now().toFormat("yyyy-MM-dd");
@@ -109,7 +111,7 @@ export function Game({ settingsData }: GameProps) {
             hideImageMode && !gameEnded ? "h-0" : "h-full"
           }`}
           alt="country to guess"
-          src={`images/countries/${country.code.toLowerCase()}/vector.svg`}
+          src={`images/countries/${country.code.toLowerCase()}.svg`}
           style={
             rotationMode && !gameEnded
               ? {
@@ -143,17 +145,6 @@ export function Game({ settingsData }: GameProps) {
               hideImageMode={hideImageMode}
               rotationMode={rotationMode}
             />
-            <a
-              className="underline w-full text-center block mt-4"
-              href={`https://www.google.com/maps?q=${getCountryName(
-                i18n.resolvedLanguage,
-                country
-              )}&hl=${i18n.resolvedLanguage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("showOnGoogleMaps")}
-            </a>
           </>
         ) : (
           <form onSubmit={handleSubmit}>
