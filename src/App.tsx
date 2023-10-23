@@ -1,13 +1,15 @@
-import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Game } from "./components/Game";
+
+import { Flip, ToastContainer } from "react-toastify";
 import React, { useEffect, useState } from "react";
+
+import { Game } from "./components/Game";
 import { Infos } from "./components/panels/Infos";
-import { useTranslation } from "react-i18next";
 import { InfosFr } from "./components/panels/InfosFr";
 import { Settings } from "./components/panels/Settings";
-import { useSettings } from "./hooks/useSettings";
 import { Worldle } from "./components/Worldle";
+import { useSettings } from "./hooks/useSettings";
+import { useTranslation } from "react-i18next";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -65,7 +67,7 @@ function App() {
               ❔
             </button>
             <h1 className="text-4xl font-bold uppercase tracking-wide text-center my-1 flex-auto">
-              Wor<span className="text-green-600">l</span>dle
+              <span className="text-green-600">Grid</span>le
             </h1>
             <button
               className="mx-3 text-xl"
