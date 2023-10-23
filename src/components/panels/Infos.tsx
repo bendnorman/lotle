@@ -31,17 +31,17 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Wyoming",
-                direction: "E",
-                distance: 2713,
+                name: "Delaware",
+                direction: "W",
+                distance: 1686,
               },
             ]}
             settingsData={settingsData}
           />
           <div className="my-2">
-            Your guess <span className="uppercase font-bold">Wyoming</span> is{" "}
-            {formatDistance(2713, settingsData.distanceUnit)} away from the
-            target state, the target state is in the East direction and you have
+            Your guess <span className="uppercase font-bold">Delaware</span> is{" "}
+            {formatDistance(1686, settingsData.distanceUnit)} away from the
+            target state, the target state is in the West direction and you have
             a only 46% of proximity because it&apos;s quite far away!
           </div>
         </div>
@@ -50,8 +50,8 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Rhode Island",
-                direction: "SW",
+                name: "Nevada",
+                direction: "NE",
                 distance: 449,
               },
             ]}
@@ -59,9 +59,9 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
           />
           <div className="my-2">
             Your second guess{" "}
-            <span className="uppercase font-bold">Rhode Island</span> is getting
+            <span className="uppercase font-bold">Nevada</span> is getting
             closer! {formatDistance(3206000, settingsData.distanceUnit)} away,
-            South-West direction and 91%!
+            South-West direction and 83%!
           </div>
         </div>
         <div>
@@ -69,7 +69,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Delaware",
+                name: "Wyoming",
                 direction: "N",
                 distance: 0,
               },
@@ -77,7 +77,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             settingsData={settingsData}
           />
           <div className="my-2">
-            Next guess, <span className="uppercase font-bold">Delaware</span>,
+            Next guess, <span className="uppercase font-bold">Wyoming</span>,
             it&apos;s the state to guess! Congrats! 🎉
           </div>
         </div>
